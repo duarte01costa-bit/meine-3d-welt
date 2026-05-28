@@ -1,3 +1,10 @@
+/* Weiches Scrollen beim Klick auf Menülinks */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hintergrund und Schrift der gesamten Webseite */
+/* Allgemeines Design der Webseite */
 body {
     background-color: #1e1e1e;
     color: white;
@@ -6,15 +13,22 @@ body {
 }
 
 header {
-    background-color: #9a9188;
+    background-color: #353434;
     text-align: center;
     padding: 30px;
 }
 
+/* Navigation bleibt oben sichtbar (sticky) */
 nav {
-    background-color: #333;
+    background-color: #252525;
     padding: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
@@ -35,24 +49,43 @@ section {
     border-radius: 10px;
 }
 
+/* Design der Projektkarten */
 .karte {
     background-color: #3a3a3a;
     padding: 15px;
     margin: 10px 0;
-    border-left: 5px solid #fca451;
+    border-left: 5px solid #ff7b00;
     border-radius: 8px;
 }
 
-button {
-    background-color: #fca451;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
+/* Kartenlayout für Projekte */
+.projekt-box
+{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
+button {
+    display: inline-block;
+    background-color: transparent;
+    color: white;
+    padding: 8px 10px;
+    border: 2px solid #ff7b00;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover-Effekt für Buttons */
 button:hover {
-    background-color: #fca451;
+    background-color: #ff7b00;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 123, 0, 0.5);
 }
 
 footer {
@@ -60,3 +93,308 @@ footer {
     text-align: center;
     padding: 15px;
 }
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
+}
+
+.drucker-links,
+.drucker-rechts {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+}
+
+.drucker-info {
+    display: none;
+    background-color: #3a3a3a;
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 5px solid #ff7b00;
+    border-radius: 10px;
+}
+
+.drucker-info a {
+    color: #ff7b00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.drucker-info a:hover {
+    color: #fca451;
+}
+
+.logo-animation {
+    position: relative;
+    width: 500px;
+    margin: auto;
+}
+
+.logo-bg {
+    width: 100%;
+    display: block;
+}
+
+.druckkopf {
+    position: absolute;
+    top: 110px;
+    left: 170px;
+    width: 120px;
+    animation: bewegen 3s infinite ease-in-out;
+}
+
+/* Animation für den Druckkopf im Logo */
+@keyframes bewegen {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(40px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.filament-bilder img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    background-color: #3a3a3a;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+/* Filamentbilder vergrößern sich beim Überfahren */
+.filament-bilder img:hover {
+    transform: scale(1.08);
+    border: 2px solid #ff7b00;
+}
+
+.nach-oben-button {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ff7b00;
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.nach-oben-button:hover {
+    background-color: #ffa64d;
+    transform: scale(1.05);
+}
+
+.filament-bilder {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.filament-button-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.filament-button-box button {
+    width: 200px;
+}
+
+.drucker-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.filament-button-box button {
+    width: 200px;
+}
+
+.footer-inhalt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer-logo {
+    width: 250px;
+    border-radius: 10px;
+}
+
+.footer-drucker {
+    width: 350px;
+    border-radius: 10px;
+}
+
+.filament-karte {
+    text-align: center;
+}
+
+.filament-karte p {
+    margin-top: 8px;
+    font-weight: normal;
+    color: white;
+}
+
+.filament-karte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drucker-box {
+    text-align: center;
+}
+
+.drucker-box p {
+    margin-top: 10px;
+    color: white;
+}
+
+.p1s-bild {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer-text p {
+    margin: 0;
+}
+
+.drucker-detail-bild {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Fester Nach-oben-Button */
+.nach-oben-button-fix {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    width: 55px;
+    height: 55px;
+
+    background-color: transparent;
+    color: white;
+
+    border: 2px solid #ff7b00;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+
+    border-radius: 50%;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.nach-oben-button-fix:hover {
+    background-color: #ff7b00;
+    color: black;
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(255, 123, 0, 0.5);
+}
+
+section,
+.karte,
+.drucker-info {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+nav a:hover {
+    color: #ff7b00;
+}
+
+h2 {
+    border-bottom: 3px solid #ff7b00;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.karte:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+.sprache-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.projekt-karte
+{
+    width: 260px;
+}
+
+.projekt-bild
+{
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+}
+
+.nr5-bild
+{
+    object-position: top;
+}
+
+.projekt-info
+{
+    display: none;
+    margin-top: 15px;
+}
+
+/* Tipps und Tricks untereinander anzeigen */
+.tipps-box
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
