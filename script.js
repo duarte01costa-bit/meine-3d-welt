@@ -102,6 +102,13 @@ function zeigePETG()
 // Funktion für Filamente Ende
 
 // Projektbeschreibung von E-Wally anzeigen
+function schliesseAlleProjekte()
+{
+    document.getElementById("ewally-info").style.display = "none";
+    document.getElementById("nr5-info").style.display = "none";
+    document.getElementById("miniFluegel-info").style.display = "none";
+}
+
 function zeigeEWally()
 {
     let info = document.getElementById("ewally-info");
@@ -112,6 +119,7 @@ function zeigeEWally()
     }
     else
     {
+        schliesseAlleProjekte();
         info.style.display = "block";
     }
 }
@@ -126,6 +134,7 @@ function zeigeNr5()
     }
     else
     {
+        schliesseAlleProjekte();
         info.style.display = "block";
     }
 }
@@ -140,6 +149,7 @@ function zeigeMiniFluegel()
     }
     else
     {
+        schliesseAlleProjekte();
         info.style.display = "block";
     }
 }
@@ -213,6 +223,116 @@ function zeigeModifikatoren()
         schliesseAlleTipps();
         info.style.display = "block";
     }
+
 }
 
+// Barrierefreiheit:
+// Der Benutzer kann die Schriftgröße vergrößern oder verkleinern.
+// Zusätzlich kann ein Kontrastmodus aktiviert werden,
+// damit die Inhalte besser lesbar sind.
+let aktuelleSchriftgroesse = 100;
+
+function schriftGroesser()
+{
+    aktuelleSchriftgroesse += 10;
+    document.body.style.fontSize = aktuelleSchriftgroesse + "%";
+}
+
+function schriftKleiner()
+{
+    aktuelleSchriftgroesse -= 10;
+    document.body.style.fontSize = aktuelleSchriftgroesse + "%";
+}
+
+function farbenWechseln()
+{
+    document.body.classList.toggle("kontrast-modus");
+}
+
+function englisch()
+{
+    document.getElementById("titel").innerHTML = "My 3D World";
+    document.getElementById("willkommen").innerHTML =
+        "Welcome to my website about 3D printing.";
+
+    document.getElementById("nav-drucker").innerHTML =
+        "My 3D Printers";
+
+    document.getElementById("nav-filamente").innerHTML =
+        "My Filament Selection";
+
+    document.getElementById("nav-projekte").innerHTML =
+        "My Projects";
+
+    document.getElementById("nav-tipps").innerHTML =
+        "Tips and Tricks";
+
+    document.getElementById("drucker-ueberschrift").innerHTML =
+        "My 3D Printers";
+
+    document.getElementById("drucker-text").innerHTML =
+        "On my website I present projects and experiences with the Bambu Lab P1S and the Bambu Lab A1.";
+
+    document.getElementById("btn-p1s").innerHTML =
+    "P1S Information";
+    
+    document.getElementById("btn-a1").innerHTML =
+    "A1 Information";
+
+    document.getElementById("projekte-ueberschrift").innerHTML =
+        "My Projects";
+
+    document.getElementById("filamente-ueberschrift").innerHTML =
+        "My Filament Selection";
+
+    document.getElementById("tipps-ueberschrift").innerHTML =
+        "Tips and Tricks";
+}
+
+function deutsch()
+{
+    document.getElementById("titel").innerHTML =
+        "Meine 3D Welt";
+
+    document.getElementById("willkommen").innerHTML =
+        "Willkommen auf meiner Webseite rund um 3D-Druck.";
+
+    document.getElementById("nav-drucker").innerHTML =
+        "Meine 3D-Drucker";
+
+    document.getElementById("nav-filamente").innerHTML =
+        "Meine Filament-Auswahl";
+
+    document.getElementById("nav-projekte").innerHTML =
+        "Meine Projekte";
+
+    document.getElementById("nav-tipps").innerHTML =
+        "Tipps und Tricks";
+
+    document.getElementById("drucker-ueberschrift").innerHTML =
+        "Meine 3D-Drucker";
+
+    document.getElementById("drucker-text").innerHTML =
+        "Auf meiner Webseite zeige ich Projekte und Erfahrungen mit dem Bambu Lab P1S und dem Bambu Lab A1.";
+
+    document.getElementById("projekte-ueberschrift").innerHTML =
+        "Meine Projekte";
+
+    document.getElementById("filamente-ueberschrift").innerHTML =
+        "Meine Filament-Auswahl";
+
+    document.getElementById("tipps-ueberschrift").innerHTML =
+        "Tipps und Tricks";
+}
+
+function bildAnzeigen(bildPfad)
+{
+    document.getElementById("popupBild").src = bildPfad;
+    document.getElementById("bildPopup").style.display = "flex";
+}
+
+function popupSchliessen()
+{
+    document.getElementById("bildPopup").style.display = "none";
+}
 

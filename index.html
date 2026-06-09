@@ -9,91 +9,83 @@
 </head>
 
 <body id="top">
-
     <!-- Kopfbereich der Webseite -->
     <header>
-
         <div class="drucker-box">
-
             <img class="drucker-links" src="Bilder/P1S.png" alt="Bambu Lab P1S">
-
             <p>Bambu Lab P1S</p>
-
         </div>
-
         <div class="header-text">
-
             <div class="logo-animation">
-
-                <img src="Bilder/logo-hintergrund.png" class="logo-bg">
-
-                <img src="Bilder/druckkopf.png" class="druckkopf">
-
+                <img src="Bilder/logo-hintergrund.png" class="logo-bg"
+                    alt="Logo Meine 3D Welt">
+                <img src="Bilder/druckkopf.png" class="druckkopf"
+                    alt="Animierter Druckkopf eines 3D-Druckers">
             </div>
-
-            <h1>Meine 3D Welt</h1>
-            <p>
+            <h1 id="titel">Meine 3D Welt</h1>
+            <p id="willkommen">
                 Willkommen auf meiner Webseite rund um 3D-Druck.
             </p>
-
         </div>
-
         <div class="drucker-box">
-
             <img class="drucker-rechts" src="Bilder/A1.png" alt="Bambu Lab A1">
-
             <p>Bambu Lab A1</p>
-
         </div>
-
     </header>
-
     <!-- Navigationsleiste -->
     <nav>
-
-        <a href="#drucker">Meine 3D-Drucker</a>
-        <a href="#filamente">Meine Filament-Auswahl</a>
-        <a href="#drucke">Meine Projekte</a>
-        <a href="#tipps">Tipps und Tricks</a>
-
+        <a id="nav-drucker" href="#drucker">Meine 3D-Drucker</a>
+        <a id="nav-filamente" href="#filamente">Meine Filament-Auswahl</a>
+        <a id="nav-projekte" href="#drucke">Meine Projekte</a>
+        <a id="nav-tipps" href="#tipps">Tipps und Tricks</a>
         <!-- Sprachumschaltung -->
-        <div class="sprache-buttons">
+       <div class="sprache-buttons">
 
-            <button onclick="deutsch()">Deutsch</button>
+        <button onclick="deutsch()" aria-label="Sprache auf Deutsch umstellen">
+        Deutsch
+        </button>
 
-            <button onclick="englisch()">English</button>
+        <button onclick="englisch()" aria-label="Sprache auf Englisch umstellen">
+        Englisch
+        </button>
 
-        </div>
+        <!-- Barrierefreiheit: Schriftgröße und Farben ändern -->
+        <div class="barriere-buttons">
+        <button onclick="schriftGroesser()" aria-label="Schriftgröße vergrößern">
+        Schrift +
+        </button>
+        <button onclick="schriftKleiner()" aria-label="Schriftgröße verkleinern">
+        Schrift -
+        </button>
+        <button onclick="farbenWechseln()" aria-label="Kontrastmodus umschalten">
+        Kontrastmodus
+        </button>
+        </div> <!-- schließt barriere-buttons -->
 
+    </div> <!-- schließt sprache-buttons -->
     </nav>
-
     <main>
-
         <!-- Bereich für die 3D-Drucker -->
         <section id="drucker">
-            <h2>Meine 3D-Drucker</h2>
-            <p>Auf meiner Webseite zeige ich Projekte und Erfahrungen mit dem Bambu Lab P1S und dem Bambu Lab A1.</p>
+            <h2 id="drucker-ueberschrift">Meine 3D-Drucker</h2>
+            <p id="drucker-text">
+                Auf meiner Webseite zeige ich Projekte und Erfahrungen mit dem Bambu Lab P1S und dem Bambu Lab A1.
+            </p>
             <div class="drucker-buttons">
-
                 <!-- Button zum Anzeigen der P1S Informationen -->
-                <button onclick="zeigeP1S()">
-                    Informationen zum P1S
-                </button>
-                <!-- Button zum Anzeigen der A1 Informationen -->
-                <button onclick="zeigeA1()">
-                    Informationen zum A1
+                <button id="btn-p1s" onclick="zeigeP1S()">
+                Informationen zum P1S
                 </button>
 
+                <button id="btn-a1" onclick="zeigeA1()">
+                Informationen zum A1
+                </button>
             </div>
-
             <div id="p1s-info" class="drucker-info">
                 <h3>Bambu Lab P1S</h3>
-
                 <!-- Bild vom Bambu Lab P1S -->
-                <img src="Bilder/p1s_widget_image.jpg" class="p1s-bild" alt="Beschriftetes Bild vom Bambu Lab P1S">
-
+                <img src="Bilder/p1s_widget_image.jpg" class="p1s-bild" alt="3D-Drucker Bambu Lab P1S in schwarzem Gehäuse">
                 <h3>Produktmerkmale</h3>
-
                 <ul>
                     <li>Schneller Aufbau in 15 Minuten: Vom Auspacken bis zum ersten Druck in nur 15 Minuten.</li>
                     <li>Vollständig geschlossenes Gehäuse: Drucken Sie mit technischen Filamenten sicher und konsistent.
@@ -160,83 +152,101 @@
         <!-- Bereich für meine Projekte -->
         <section id="drucke">
 
-            <h2>Meine Projekte</h2>
+            <h2 id="projekte-ueberschrift">Meine Projekte</h2>
 
             <!-- Kartenlayout für Projekte -->
-            <div class="projekt-box">
+            <div class="projekte-box">
 
                 <div class="karte projekt-karte">
-                    <img src="Bilder/E-Wally1.jpg" class="projekt-bild" alt="3D-Druck Projekt E-Wally">
+                    <img src="Bilder/E-Wally1.png"
+                        class="projekt-bild ewally-bild"
+                        alt="3D-gedruckter E-Wally Roboter aus grauem PLA mit beweglichen Armen und Kettenantrieb. Das Modell basiert auf dem Film WALL-E und wurde aus mehreren Einzelteilen gedruckt und zusammengesetzt."
+                        onclick="bildAnzeigen(this.src)">
 
-                    <h3>E-Wally</h3>
-                    <p>Material: PLA</p>
-                    <p>Druckzeit: 8 Stunden</p>
+                    <div class="projekt-text">
 
-                    <button onclick="zeigeEWally()">
-                        Mehr anzeigen
-                    </button>
+                        <h3>E-Wally</h3>
+                        <p>Material: PLA</p>
+                        <p>Druckzeit: 8 Stunden</p>
 
-                    <div id="ewally-info" class="projekt-info">
-
-                        <p>
-                            E-Wally ist ein 3D-Druck-Projekt mit mehreren Einzelteilen.
-                            Das Modell wurde aus PLA gedruckt und anschließend zusammengebaut.
-                        </p>
-
+                        <button onclick="zeigeEWally()">
+                            Mehr anzeigen
+                        </button>
+                        <div id="ewally-info" class="projekt-info">
+                            <p>
+                                E-Wally ist ein detailreicher 3D-gedruckter Roboter, der vom bekannten Filmcharakter WALL-E inspiriert wurde.
+                                Das Modell besteht aus zahlreichen Einzelteilen, die mit dem Bambu Lab P1S aus grauem PLA-Filament gefertigt wurden.
+                                Nach dem Druck wurden die Bauteile sorgfältig montiert. Besonders auffällig sind die beweglichen Arme,
+                                der drehbare Kopf sowie die Kettenlaufwerke. Das Projekt zeigt die Möglichkeiten des 3D-Drucks bei der
+                                Herstellung komplexer Modelle mit vielen Einzelkomponenten.
+                            </p>
+                        </div>
                     </div>
 
                 </div>
 
                 <div class="karte projekt-karte">
-                    <img src="Bilder/Nr.5 Lebt.jpg" class="projekt-bild nr5-bild" alt="3D-Druck Projekt Nr.5 Lebt">
+                    <img src="Bilder/Nr.5-Lebt.png"
+                        class="projekt-bild nr5-bild"
+                        alt="3D-gedruckter Roboter Nr.5 aus dem Film Nummer 5 lebt. Das Modell wurde aus grauem PLA-Filament gefertigt und besitzt bewegliche Arme, Kettenantrieb sowie farbige Details in Blau und Rot."
+                        onclick="bildAnzeigen(this.src)">
 
-                    <h3>Nr.5 lebt</h3>
-                    <p>Material: PLA</p>
-                    <p>Druckzeit: 10 Stunden</p>
+                    <div class="projekt-text">
 
-                    <button onclick="zeigeNr5()">
-                        Mehr anzeigen
-                    </button>
+                        <h3>Nr.5 lebt</h3>
+                        <p>Material: PLA</p>
+                        <p>Druckzeit: 10 Stunden</p>
 
-                    <div id="nr5-info" class="projekt-info">
-                        <p>
-                            Nr.5 lebt ist ein 3D-Druck-Projekt mit mehreren Einzelteilen.
-                            Das Modell wurde aus PLA gedruckt und anschließend zusammengebaut.
-                        </p>
+                        <button onclick="zeigeNr5()">
+                            Mehr anzeigen
+                        </button>
+                        <div id="nr5-info" class="projekt-info">
+                            <p>
+                                Nr.5 lebt ist ein detailreicher 3D-Druck des bekannten Roboters aus dem Film „Nummer 5 lebt“.
+                                Das Modell wurde mit dem Bambu Lab P1S aus grauem PLA-Filament hergestellt und besteht aus
+                                mehreren Einzelteilen, die nach dem Druck zusammengebaut wurden. Besonders auffällig sind die
+                                beweglichen Arme, die charakteristischen Kameraaugen, die Kettenlaufwerke sowie die farbigen
+                                Akzente in Blau und Rot. Die Druckzeit betrug etwa 10 Stunden. Dieses Projekt zeigt, wie sich
+                                komplexe Filmfiguren mit moderner 3D-Drucktechnik detailgetreu nachbilden lassen.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="karte projekt-karte">
-                    <img src="Bilder/Klavier1.jpeg" class="projekt-bild" alt="3D-Druck Projekt Mini Flügel">
+                    <img src="Bilder/Klavier1.png"
+                        class="projekt-bild"
+                        alt="3D-gedruckter Miniatur-Flügel aus schwarzem PLA Matte mit geöffnetem Deckel, Klaviatur und Notenblatt. Das Modell wurde aus mehreren Einzelteilen gefertigt und anschließend montiert."
+                        onclick="bildAnzeigen(this.src)">
 
-                    <h3>Mini Flügel</h3>
-                    <p>Material: PLA Matte</p>
-                    <p>Druckzeit: 6 Stunden</p>
+                    <div class="projekt-text">
+                        <h3>Mini Flügel</h3>
+                        <p>Material: PLA Matte</p>
+                        <p>Druckzeit: 6 Stunden</p>
 
+                        <button onclick="zeigeMiniFluegel()">
+                            Mehr anzeigen
+                        </button>
 
-                    <button onclick="zeigeMiniFluegel()">
-                        Mehr anzeigen
-                    </button>
-
-
-                    <div id="miniFluegel-info" class="projekt-info">
-
-                        <p>
-                            Der Mini Flügel ist ein dekoratives 3D-Druck-Projekt.
-                            Besonders wichtig sind saubere Details und eine glatte Oberfläche.
-                        </p>
+                        <div id="miniFluegel-info" class="projekt-info">
+                            <p>
+                                Der Mini Flügel ist ein detailreiches 3D-Druck-Projekt, das einen klassischen Konzertflügel im Miniaturformat darstellt.
+                                Das Modell wurde mit dem Bambu Lab P1S aus schwarzem PLA Matte gedruckt und besteht aus mehreren präzise gefertigten Einzelteilen.
+                                Besondere Merkmale sind der aufklappbare Flügeldeckel, die detaillierte Klaviatur, die Pedale sowie das kleine Notenblatt.
+                                Die Druckzeit betrug etwa 6 Stunden. Dieses Projekt zeigt die hohe Detailgenauigkeit moderner 3D-Druckverfahren und die Möglichkeit,
+                                auch filigrane Objekte realitätsnah nachzubilden.
+                            </p>
+                        </div>
 
                     </div>
-
                 </div>
             </div>
-
         </section>
 
         <!-- Bereich für Filamente -->
         <section id="filamente">
 
-            <h2>Meine Filament-Auswahl</h2>
+            <h2 id="filamente-ueberschrift">Meine Filament-Auswahl</h2>
 
             <div class="filament-button-box">
 
@@ -322,7 +332,7 @@
         <!-- Bereich für Tipps und Tricks -->
         <section id="tipps">
 
-            <h2>Tipps und Tricks</h2>
+            <h2 id="tipps-ueberschrift">Tipps und Tricks</h2>
 
             <div class="tipps-box">
 
@@ -490,24 +500,22 @@
 
     </main>
 
-    <!-- Footer mit Logo und Copyright -->
-    <footer>
+    <!-- Footer mit Zusatzinformationen (Unterer bereich)-->
+<footer>
+    <div class="footer-inhalt">
 
-        <div class="footer-inhalt">
+        <img src="Bilder/Logo.png" class="footer-logo" alt="Logo der Webseite Meine 3D Welt">
 
-            <img src="Bilder/Logo.png" class="footer-logo" alt="Logo Meine 3D Welt">
-
-            <div class="footer-text">
-
-                <p>© 2026 Duarte Costa – Meine 3D Welt</p>
-
-            </div>
-
-            <img src="Bilder/P1S-A1.png" class="footer-drucker" alt="Bambu Lab P1S und Bambu Lab A1">
-
+        <div class="footer-text">
+            <p>© 2026 Duarte Costa – Meine 3D Welt</p>
+            <p>Letzte Aktualisierung: Juni 2026</p>
+            <p>Diese Webseite ist ein privates Schulprojekt und dient nur zu Lern- und Präsentationszwecken.</p>
         </div>
 
-    </footer>
+        <img src="Bilder/P1S-A1.png" class="footer-drucker" alt="Bambu Lab P1S und Bambu Lab A1 3D-Drucker">
+
+    </div>
+</footer>
 
     <!-- Fester Nach-oben-Button -->
     <a href="#top" class="nach-oben-button-fix">
@@ -515,6 +523,10 @@
     </a>
     <!-- Verknüpfung mit JavaScript-Datei -->
     <script src="script.js"></script>
+
+<div id="bildPopup" class="popup" onclick="popupSchliessen()">
+    <img id="popupBild" src="" alt="Großansicht">
+</div>
 
 </body>
 

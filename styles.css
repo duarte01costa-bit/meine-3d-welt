@@ -56,10 +56,11 @@ section {
     margin: 10px 0;
     border-left: 5px solid #ff7b00;
     border-radius: 8px;
+    transition: 0.3s;
 }
 
 /* Kartenlayout für Projekte */
-.projekt-box
+.projekte-box
 {
     display: flex;
     gap: 20px;
@@ -176,13 +177,16 @@ header {
     border-radius: 15px;
     background-color: #3a3a3a;
     padding: 10px;
-    transition: 0.3s;
+
+    border: 2px solid transparent;
+
+    transition: transform 0.4s ease,
+                border-color 0.4s ease;
 }
 
-/* Filamentbilder vergrößern sich beim Überfahren */
 .filament-bilder img:hover {
-    transform: scale(1.08);
-    border: 2px solid #ff7b00;
+    transform: scale(1.05);
+    border-color: #ff7b00;
 }
 
 .nach-oben-button {
@@ -353,6 +357,12 @@ h2 {
 .karte:hover {
     transform: translateY(-5px);
     transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(255, 123, 0, 0.25);
+    border-left-color: #ffa64d;
+}
+
+.projekt-bild:hover {
+    transform: scale(1.05);
 }
 
 .sprache-buttons {
@@ -364,30 +374,33 @@ h2 {
 
 .projekt-karte
 {
-    width: 260px;
+    width: auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
 }
 
 .projekt-bild
 {
-    width: 100%;
-    height: 180px;
-
+    width: 350px;
+    height: 220px;
+    flex-shrink: 0;
     object-fit: cover;
-
     border-radius: 10px;
-
-    margin-bottom: 15px;
+    transition: 0.3s ease;
 }
 
 .nr5-bild
 {
-    object-position: top;
+    object-fit: cover;
+    object-position: center 20%;
 }
 
-.projekt-info
-{
-    display: none;
-    margin-top: 15px;
+.ewally-bild {
+    object-fit: cover;
+    object-position: center 30%;
 }
 
 /* Tipps und Tricks untereinander anzeigen */
@@ -396,5 +409,136 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.projekte-box
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.projekt-text
+{
+    flex: 1;
+    min-width: 0;
+}
+
+.projekt-info {
+    display: none;
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* Barrierefreiheit */
+.barriere-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.kontrast-modus button {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+
+.kontrast-modus nav,
+.kontrast-modus section,
+.kontrast-modus .karte,
+.kontrast-modus .projekt-karte,
+.kontrast-modus .drucker-info {
+    background-color: black;
+    color: white;
+}
+
+.kontrast-modus {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+/* Sanfte Animationen für Karten und Bilder */
+.karte,
+.projekt-bild,
+.filament-bilder img,
+button {
+    transition: 0.3s ease;
+}
+
+/* Responsive Design für kleinere Bildschirme */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sprache-buttons,
+    .barriere-buttons {
+        margin-left: 0;
+        margin-right: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .drucker-links,
+    .drucker-rechts {
+        width: 220px;
+        height: 220px;
+    }
+
+    .logo-animation {
+        width: 300px;
+    }
+
+    .druckkopf {
+        width: 80px;
+        top: 70px;
+        left: 110px;
+    }
+
+    .projekt-karte {
+        flex-direction: column;
+    }
+
+    .projekt-bild {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-inhalt {
+        flex-direction: column;
+    }
+
+    .footer-logo,
+    .footer-drucker {
+        width: 220px;
+    }
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.popup img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255,123,0,0.5);
+    cursor: pointer;
 }
 
