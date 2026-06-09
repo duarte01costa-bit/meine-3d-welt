@@ -1,3 +1,10 @@
+/* Weiches Scrollen beim Klick auf Menülinks */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hintergrund und Schrift der gesamten Webseite */
+/* Allgemeines Design der Webseite */
 body {
     background-color: #1e1e1e;
     color: white;
@@ -6,15 +13,22 @@ body {
 }
 
 header {
-    background-color: #9a9188;
+    background-color: #353434;
     text-align: center;
     padding: 30px;
 }
 
+/* Navigation bleibt oben sichtbar (sticky) */
 nav {
-    background-color: #333;
+    background-color: #252525;
     padding: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
@@ -35,24 +49,44 @@ section {
     border-radius: 10px;
 }
 
+/* Design der Projektkarten */
 .karte {
     background-color: #3a3a3a;
     padding: 15px;
     margin: 10px 0;
-    border-left: 5px solid #fca451;
+    border-left: 5px solid #ff7b00;
     border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Kartenlayout für Projekte */
+.projekte-box
+{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 button {
-    background-color: #fca451;
+    display: inline-block;
+    background-color: transparent;
     color: white;
-    border: none;
-    padding: 10px 15px;
+    padding: 8px 10px;
+    border: 2px solid #ff7b00;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
+/* Hover-Effekt für Buttons */
 button:hover {
-    background-color: #fca451;
+    background-color: #ff7b00;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 123, 0, 0.5);
 }
 
 footer {
@@ -60,3 +94,451 @@ footer {
     text-align: center;
     padding: 15px;
 }
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
+}
+
+.drucker-links,
+.drucker-rechts {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+}
+
+.drucker-info {
+    display: none;
+    background-color: #3a3a3a;
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 5px solid #ff7b00;
+    border-radius: 10px;
+}
+
+.drucker-info a {
+    color: #ff7b00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.drucker-info a:hover {
+    color: #fca451;
+}
+
+.logo-animation {
+    position: relative;
+    width: 500px;
+    margin: auto;
+}
+
+.logo-bg {
+    width: 100%;
+    display: block;
+}
+
+.druckkopf {
+    position: absolute;
+    top: 110px;
+    left: 170px;
+    width: 120px;
+    animation: bewegen 3s infinite ease-in-out;
+}
+
+/* Animation für den Druckkopf im Logo */
+@keyframes bewegen {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(40px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.filament-bilder img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    background-color: #3a3a3a;
+    padding: 10px;
+
+    border: 2px solid transparent;
+
+    transition: transform 0.4s ease,
+                border-color 0.4s ease;
+}
+
+.filament-bilder img:hover {
+    transform: scale(1.05);
+    border-color: #ff7b00;
+}
+
+.nach-oben-button {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ff7b00;
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.nach-oben-button:hover {
+    background-color: #ffa64d;
+    transform: scale(1.05);
+}
+
+.filament-bilder {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.filament-button-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.filament-button-box button {
+    width: 200px;
+}
+
+.drucker-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.filament-button-box button {
+    width: 200px;
+}
+
+.footer-inhalt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer-logo {
+    width: 250px;
+    border-radius: 10px;
+}
+
+.footer-drucker {
+    width: 350px;
+    border-radius: 10px;
+}
+
+.filament-karte {
+    text-align: center;
+}
+
+.filament-karte p {
+    margin-top: 8px;
+    font-weight: normal;
+    color: white;
+}
+
+.filament-karte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drucker-box {
+    text-align: center;
+}
+
+.drucker-box p {
+    margin-top: 10px;
+    color: white;
+}
+
+.p1s-bild {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer-text p {
+    margin: 0;
+}
+
+.drucker-detail-bild {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Fester Nach-oben-Button */
+.nach-oben-button-fix {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    width: 55px;
+    height: 55px;
+
+    background-color: transparent;
+    color: white;
+
+    border: 2px solid #ff7b00;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+
+    border-radius: 50%;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.nach-oben-button-fix:hover {
+    background-color: #ff7b00;
+    color: black;
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(255, 123, 0, 0.5);
+}
+
+section,
+.karte,
+.drucker-info {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+nav a:hover {
+    color: #ff7b00;
+}
+
+h2 {
+    border-bottom: 3px solid #ff7b00;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.karte:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(255, 123, 0, 0.25);
+    border-left-color: #ffa64d;
+}
+
+.projekt-bild:hover {
+    transform: scale(1.05);
+}
+
+.sprache-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.projekt-karte
+{
+    width: auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.projekt-bild
+{
+    width: 350px;
+    height: 220px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.nr5-bild
+{
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.ewally-bild {
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+/* Tipps und Tricks untereinander anzeigen */
+.tipps-box
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.projekte-box
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.projekt-text
+{
+    flex: 1;
+    min-width: 0;
+}
+
+.projekt-info {
+    display: none;
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* Barrierefreiheit */
+.barriere-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.kontrast-modus button {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+
+.kontrast-modus nav,
+.kontrast-modus section,
+.kontrast-modus .karte,
+.kontrast-modus .projekt-karte,
+.kontrast-modus .drucker-info {
+    background-color: black;
+    color: white;
+}
+
+.kontrast-modus {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+/* Sanfte Animationen für Karten und Bilder */
+.karte,
+.projekt-bild,
+.filament-bilder img,
+button {
+    transition: 0.3s ease;
+}
+
+/* Responsive Design für kleinere Bildschirme */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sprache-buttons,
+    .barriere-buttons {
+        margin-left: 0;
+        margin-right: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .drucker-links,
+    .drucker-rechts {
+        width: 220px;
+        height: 220px;
+    }
+
+    .logo-animation {
+        width: 300px;
+    }
+
+    .druckkopf {
+        width: 80px;
+        top: 70px;
+        left: 110px;
+    }
+
+    .projekt-karte {
+        flex-direction: column;
+    }
+
+    .projekt-bild {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-inhalt {
+        flex-direction: column;
+    }
+
+    .footer-logo,
+    .footer-drucker {
+        width: 220px;
+    }
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.popup img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255,123,0,0.5);
+    cursor: pointer;
+}
+

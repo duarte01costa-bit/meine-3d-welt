@@ -3,71 +3,531 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine 3D Welt</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body id="top">
+    <!-- Kopfbereich der Webseite -->
+    <header>
+        <div class="drucker-box">
+            <img class="drucker-links" src="Bilder/P1S.png" alt="Bambu Lab P1S">
+            <p>Bambu Lab P1S</p>
+        </div>
+        <div class="header-text">
+            <div class="logo-animation">
+                <img src="Bilder/logo-hintergrund.png" class="logo-bg"
+                    alt="Logo Meine 3D Welt">
+                <img src="Bilder/druckkopf.png" class="druckkopf"
+                    alt="Animierter Druckkopf eines 3D-Druckers">
+            </div>
+            <h1 id="titel">Meine 3D Welt</h1>
+            <p id="willkommen">
+                Willkommen auf meiner Webseite rund um 3D-Druck.
+            </p>
+        </div>
+        <div class="drucker-box">
+            <img class="drucker-rechts" src="Bilder/A1.png" alt="Bambu Lab A1">
+            <p>Bambu Lab A1</p>
+        </div>
+    </header>
+    <!-- Navigationsleiste -->
+    <nav>
+        <a id="nav-drucker" href="#drucker">Meine 3D-Drucker</a>
+        <a id="nav-filamente" href="#filamente">Meine Filament-Auswahl</a>
+        <a id="nav-projekte" href="#drucke">Meine Projekte</a>
+        <a id="nav-tipps" href="#tipps">Tipps und Tricks</a>
+        <!-- Sprachumschaltung -->
+       <div class="sprache-buttons">
 
-<header>
-    <img src="logo.png" alt="Meine 3D Welt Logo">
-    <div class="header-text">
-        <h1>Meine 3D Welt</h1>
-        <p>
-            Willkommen auf meiner Webseite rund um 3D-Druck.
-        </p>
-    </div>
-</header>
+        <button onclick="deutsch()" aria-label="Sprache auf Deutsch umstellen">
+        Deutsch
+        </button>
 
-<nav>
-    <a href="#drucker">Meine Drucker</a>
-    <a href="#drucke">Meine Drucke</a>
-    <a href="#filamente">Filamente</a>
-</nav>
+        <button onclick="englisch()" aria-label="Sprache auf Englisch umstellen">
+        Englisch
+        </button>
 
-<main>
+        <!-- Barrierefreiheit: Schriftgröße und Farben ändern -->
+        <div class="barriere-buttons">
+        <button onclick="schriftGroesser()" aria-label="Schriftgröße vergrößern">
+        Schrift +
+        </button>
+        <button onclick="schriftKleiner()" aria-label="Schriftgröße verkleinern">
+        Schrift -
+        </button>
+        <button onclick="farbenWechseln()" aria-label="Kontrastmodus umschalten">
+        Kontrastmodus
+        </button>
+        </div> <!-- schließt barriere-buttons -->
 
-<section id="drucker">
-    <h2>Mein 3D-Drucker</h2>
-    <p>Ich arbeite mit einem Bambu Lab P1S.</p>
-    <p>und ein Bambu Lab A1.</p>
-</section>
+    </div> <!-- schließt sprache-buttons -->
+    </nav>
+    <main>
+        <!-- Bereich für die 3D-Drucker -->
+        <section id="drucker">
+            <h2 id="drucker-ueberschrift">Meine 3D-Drucker</h2>
+            <p id="drucker-text">
+                Auf meiner Webseite zeige ich Projekte und Erfahrungen mit dem Bambu Lab P1S und dem Bambu Lab A1.
+            </p>
+            <div class="drucker-buttons">
+                <!-- Button zum Anzeigen der P1S Informationen -->
+                <button id="btn-p1s" onclick="zeigeP1S()">
+                Informationen zum P1S
+                </button>
 
-<section id="drucke">
-    <h2>Meine Drucke</h2>
+                <button id="btn-a1" onclick="zeigeA1()">
+                Informationen zum A1
+                </button>
+            </div>
+            <div id="p1s-info" class="drucker-info">
+                <h3>Bambu Lab P1S</h3>
+                <!-- Bild vom Bambu Lab P1S -->
+                <img src="Bilder/p1s_widget_image.jpg" class="p1s-bild" alt="3D-Drucker Bambu Lab P1S in schwarzem Gehäuse">
+                <h3>Produktmerkmale</h3>
+                <ul>
+                    <li>Schneller Aufbau in 15 Minuten: Vom Auspacken bis zum ersten Druck in nur 15 Minuten.</li>
+                    <li>Vollständig geschlossenes Gehäuse: Drucken Sie mit technischen Filamenten sicher und konsistent.
+                    </li>
+                    <li>Mehrfarbige Vielseitigkeit: Entfesseln Sie grenzenlose Kreativität mit AMS-gesteuertem
+                        Multimaterial-Druck.</li>
+                    <li>Zuverlässigkeit auf Profi-Niveau: Bewährte Leistung und hohe Betriebszeiten, vertraut von
+                        professionellen Druckfarmen.</li>
+                    <li>Großes Druckvolumen: Ein großzügiger Bauraum von 256 × 256 × 256 mm³ für Ihre anspruchsvollen
+                        Projekte.</li>
+                    <li>Der AMS 2 Pro ist mit Druckern der X1/P1-Serie für den Mehrmaterialdruck kompatibel</li>
+                </ul>
+                <p>
+                    Der Bambu Lab P1S ist ein schneller CoreXY-3D-Drucker mit geschlossenem Gehäuse.
+                </p>
+                <p>
+                    Er eignet sich für PLA, PETG und ABS.
+                </p>
+                <a href="PDF/P1S-Daten.pdf" target="_blank">
+                    Technische Daten als PDF
+                </a>
+            </div>
 
-    <div class="karte">
-        <h3>Batman Figur</h3>
-        <p>Material: PLA</p>
-        <p>Druckzeit: 5 Stunden</p>
-        <button>Mehr anzeigen</button>
-    </div>
+            <div id="a1-info" class="drucker-info">
+                <h3>Bambu Lab A1</h3>
 
-    <div class="karte">
-        <h3>Tortenbutler Griff</h3>
-        <p>Material: PETG-HF</p>
-        <p>Druckzeit: 3 Stunden</p>
-        <button>Mehr anzeigen</button>
-    </div>
+                <img src="Bilder/a1_widget_image.jpg" class="drucker-detail-bild"
+                    alt="Beschriftetes Bild vom Bambu Lab A1">
 
-</section>
+                <h3>Produktmerkmale</h3>
 
-<section id="filamente">
-    <h2>Filamente</h2>
+                <ul>
+                    <li>Vollautomatische Kalibrierung: Kein manuelles Einstellen erforderlich.</li>
+                    <li>Nahtloser Mehrfarbdruck: Erleben Sie grenzenlose Kreativität mit AMS-gesteuertem
+                        Materialhandling.</li>
+                    <li>Leiser Betrieb mit 49 dB: Drucken Sie in Ruhe, so leise wie in einer Bibliothek.</li>
+                    <li>Erstklassige Druckqualität: Professionelle Präzision und Oberflächen, die den Branchenstandard
+                        setzen.</li>
+                    <li>MakerWorld-Integration mit einem Klick: Finden Sie Ihr nächstes Projekt und beginnen Sie sofort.
+                    </li>
+                    <li>Großes Druckvolumen: Ein großzügiger Bauraum von 256 × 256 × 256 mm³ für Ihre kreativen Ideen.
+                    </li>
+                    <li>Das verbesserte Heizbettkabel verfügt über eine Kevlar-Verstärkung, eine dickere Isolierung,
+                        weicheres Kupfer, ein optimierter Drahtwicklungsintervall, eine Nylonummantelung und eine
+                        erweiterte Zugentlastung.</li>
+                    <li>Um den A1 Drucker an das AMS/AMS 2 Pro/AMS HT anzuschließen, ist ein AMS-Hub (SA013) als Zubehör
+                        erforderlich.</li>
+                </ul>
 
-    <ul>
-        <li>PLA</li>
-        <li>PETG-HF</li>
-        <li>PLA-CF</li>
-    </ul>
-</section>
+                <p>
+                    Der Bambu Lab A1 ist ein moderner und leiser 3D-Drucker mit automatischer Kalibrierung.
+                </p>
 
-</main>
+                <p>
+                    Er eignet sich besonders gut für PLA und PETG.
+                </p>
+                <a href="PDF/A1-Daten.pdf" target="_blank">
+                    Technische Daten als PDF
+                </a>
+            </div>
 
+        </section>
+
+        <!-- Bereich für meine Projekte -->
+        <section id="drucke">
+
+            <h2 id="projekte-ueberschrift">Meine Projekte</h2>
+
+            <!-- Kartenlayout für Projekte -->
+            <div class="projekte-box">
+
+                <div class="karte projekt-karte">
+                    <img src="Bilder/E-Wally1.png"
+                        class="projekt-bild ewally-bild"
+                        alt="3D-gedruckter E-Wally Roboter aus grauem PLA mit beweglichen Armen und Kettenantrieb. Das Modell basiert auf dem Film WALL-E und wurde aus mehreren Einzelteilen gedruckt und zusammengesetzt."
+                        onclick="bildAnzeigen(this.src)">
+
+                    <div class="projekt-text">
+
+                        <h3>E-Wally</h3>
+                        <p>Material: PLA</p>
+                        <p>Druckzeit: 8 Stunden</p>
+
+                        <button onclick="zeigeEWally()">
+                            Mehr anzeigen
+                        </button>
+                        <div id="ewally-info" class="projekt-info">
+                            <p>
+                                E-Wally ist ein detailreicher 3D-gedruckter Roboter, der vom bekannten Filmcharakter WALL-E inspiriert wurde.
+                                Das Modell besteht aus zahlreichen Einzelteilen, die mit dem Bambu Lab P1S aus grauem PLA-Filament gefertigt wurden.
+                                Nach dem Druck wurden die Bauteile sorgfältig montiert. Besonders auffällig sind die beweglichen Arme,
+                                der drehbare Kopf sowie die Kettenlaufwerke. Das Projekt zeigt die Möglichkeiten des 3D-Drucks bei der
+                                Herstellung komplexer Modelle mit vielen Einzelkomponenten.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="karte projekt-karte">
+                    <img src="Bilder/Nr.5-Lebt.png"
+                        class="projekt-bild nr5-bild"
+                        alt="3D-gedruckter Roboter Nr.5 aus dem Film Nummer 5 lebt. Das Modell wurde aus grauem PLA-Filament gefertigt und besitzt bewegliche Arme, Kettenantrieb sowie farbige Details in Blau und Rot."
+                        onclick="bildAnzeigen(this.src)">
+
+                    <div class="projekt-text">
+
+                        <h3>Nr.5 lebt</h3>
+                        <p>Material: PLA</p>
+                        <p>Druckzeit: 10 Stunden</p>
+
+                        <button onclick="zeigeNr5()">
+                            Mehr anzeigen
+                        </button>
+                        <div id="nr5-info" class="projekt-info">
+                            <p>
+                                Nr.5 lebt ist ein detailreicher 3D-Druck des bekannten Roboters aus dem Film „Nummer 5 lebt“.
+                                Das Modell wurde mit dem Bambu Lab P1S aus grauem PLA-Filament hergestellt und besteht aus
+                                mehreren Einzelteilen, die nach dem Druck zusammengebaut wurden. Besonders auffällig sind die
+                                beweglichen Arme, die charakteristischen Kameraaugen, die Kettenlaufwerke sowie die farbigen
+                                Akzente in Blau und Rot. Die Druckzeit betrug etwa 10 Stunden. Dieses Projekt zeigt, wie sich
+                                komplexe Filmfiguren mit moderner 3D-Drucktechnik detailgetreu nachbilden lassen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="karte projekt-karte">
+                    <img src="Bilder/Klavier1.png"
+                        class="projekt-bild"
+                        alt="3D-gedruckter Miniatur-Flügel aus schwarzem PLA Matte mit geöffnetem Deckel, Klaviatur und Notenblatt. Das Modell wurde aus mehreren Einzelteilen gefertigt und anschließend montiert."
+                        onclick="bildAnzeigen(this.src)">
+
+                    <div class="projekt-text">
+                        <h3>Mini Flügel</h3>
+                        <p>Material: PLA Matte</p>
+                        <p>Druckzeit: 6 Stunden</p>
+
+                        <button onclick="zeigeMiniFluegel()">
+                            Mehr anzeigen
+                        </button>
+
+                        <div id="miniFluegel-info" class="projekt-info">
+                            <p>
+                                Der Mini Flügel ist ein detailreiches 3D-Druck-Projekt, das einen klassischen Konzertflügel im Miniaturformat darstellt.
+                                Das Modell wurde mit dem Bambu Lab P1S aus schwarzem PLA Matte gedruckt und besteht aus mehreren präzise gefertigten Einzelteilen.
+                                Besondere Merkmale sind der aufklappbare Flügeldeckel, die detaillierte Klaviatur, die Pedale sowie das kleine Notenblatt.
+                                Die Druckzeit betrug etwa 6 Stunden. Dieses Projekt zeigt die hohe Detailgenauigkeit moderner 3D-Druckverfahren und die Möglichkeit,
+                                auch filigrane Objekte realitätsnah nachzubilden.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bereich für Filamente -->
+        <section id="filamente">
+
+            <h2 id="filamente-ueberschrift">Meine Filament-Auswahl</h2>
+
+            <div class="filament-button-box">
+
+                <button onclick="zeigePLA()">
+                    PLA Basic
+                </button>
+
+                <div id="pla-bilder" class="filament-bilder">
+
+                    <div class="filament-karte">
+                        <img src="Bilder/F-PLA-Basic-schwarz.png" alt="Bambu Lab PLA Basic Schwarz">
+                        <p>PLA Basic Schwarz</p>
+                    </div>
+
+                    <div class="filament-karte">
+                        <img src="Bilder/F-PLA-Basic-silber.png" alt="Bambu Lab PLA Basic Silber">
+                        <p>PLA Basic Silber</p>
+                    </div>
+
+                    <div class="filament-karte">
+                        <img src="Bilder/F-PLA-Basic-weiß.png" alt="Bambu Lab PLA Basic Weiß">
+                        <p>PLA Basic Weiß</p>
+                    </div>
+
+                </div>
+
+                <button onclick="zeigePLAMatte()">
+                    PLA Matte
+                </button>
+
+                <div id="pla-matte-bilder" class="filament-bilder">
+
+                    <div class="filament-karte">
+                        <img src="Bilder/F-PLA-Matte-schwarz.png" alt="Bambu Lab PLA Matte Schwarz">
+                        <p>PLA Matte Schwarz</p>
+                    </div>
+
+                    <div class="filament-karte">
+                        <img src="Bilder/F-PLA-Matte-weiß.png" alt="Bambu Lab PLA Matte Weiß">
+                        <p>PLA Matte Weiß</p>
+                    </div>
+
+                </div>
+
+                <button onclick="zeigePLACF()">
+                    PLA-CF
+                </button>
+
+                <div id="pla-cf-bilder" class="filament-bilder">
+                    <div class="filament-karte">
+                        <img src="Bilder/F-PLA-CF-lava-grau.png" alt="Bambu Lab PLA-CF Lava Grau">
+                        <p>PLA-CF Lava Grau</p>
+                    </div>
+                </div>
+
+                <button onclick="zeigePETG()">
+                    PETG-HF
+                </button>
+
+                <div id="petg-bilder" class="filament-bilder">
+
+                    <div class="filament-karte">
+                        <img src="Bilder/F-PETG-HF-rot.png" alt="Bambu Lab PETG-HF Rot">
+                        <p>PETG-HF Rot</p>
+                    </div>
+
+                    <div class="filament-karte">
+                        <img src="Bilder/F-PETG-HF-schwarz.png" alt="Bambu Lab PETG-HF Schwarz">
+                        <p>PETG-HF Schwarz</p>
+                    </div>
+
+                    <div class="filament-karte">
+                        <img src="Bilder/F-PETG-HF-weiß.png" alt="Bambu Lab PETG-HF Weiß">
+                        <p>PETG-HF Weiß</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Bereich für Tipps und Tricks -->
+        <section id="tipps">
+
+            <h2 id="tipps-ueberschrift">Tipps und Tricks</h2>
+
+            <div class="tipps-box">
+
+                <div class="karte">
+
+                    <h3>Automatisches Anordnen</h3>
+
+                    <p>
+                        Bauteile automatisch optimal auf der Druckplatte platzieren.
+                    </p>
+
+                    <button onclick="zeigeArrange()">
+                        Mehr anzeigen
+                    </button>
+
+                    <div id="arrange-info" class="projekt-info">
+
+                        <p>
+                            Wenn du mehrere Teile auf einer Druckplatte platzierst,
+                            nutze das „Auto-Arrange“-Symbol.
+                        </p>
+
+                        <ul>
+                            <li>Bauteile werden automatisch angeordnet</li>
+                            <li>Platz wird optimal genutzt</li>
+                            <li>Weniger Fehldrucke durch Kollisionen</li>
+                            <li>Schnelleres Vorbereiten der Druckplatte</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="karte">
+
+                    <h3>Druckbett reinigen</h3>
+
+                    <p>
+                        Tipps für perfekte Haftung der ersten Schicht.
+                    </p>
+
+                    <button onclick="zeigeReinigung()">
+                        Mehr anzeigen
+                    </button>
+
+                    <div id="reinigung-info" class="projekt-info">
+
+                        <p>
+                            Für die perfekte Haftung der ersten Schicht
+                            ist eine saubere Druckplatte entscheidend.
+                        </p>
+
+                        <h4>Die beste Methode</h4>
+
+                        <ul>
+                            <li>Warmes Wasser verwenden</li>
+                            <li>Parfümfreies Spülmittel nutzen</li>
+                            <li>Mit weichem Schwamm reinigen</li>
+                            <li>Mit Küchenpapier trocknen</li>
+                        </ul>
+
+                        <h4>IPA Reinigung</h4>
+
+                        <ul>
+                            <li>Mindestens 91 % IPA verwenden</li>
+                            <li>Mit Mikrofasertuch reinigen</li>
+                        </ul>
+
+                        <h4>Wichtige Warnungen</h4>
+
+                        <ul>
+                            <li>Kein Aceton auf PEI-Platten</li>
+                            <li>Keine Stahlschwämme verwenden</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="karte">
+
+                    <h3>3D-Effekt Bauplatte</h3>
+
+                    <p>
+                        Tipps für perfekte Hologramm- und Carbon-Effekte.
+                    </p>
+
+                    <button onclick="zeigeEffektplatte()">
+                        Mehr anzeigen
+                    </button>
+
+                    <div id="effektplatte-info" class="projekt-info">
+
+                        <p>
+                            Um das Maximum aus der 3D-Effekt-Bauplatte (z.B. Bambu Lab Spectrum oder Carbon-Optik) für
+                            deinen P1S herauszuholen, kommt es besonders auf die Wahl der ersten Schicht (First Layer)
+                            und die Vorbereitung an.
+                        </p>
+
+                        <h4>1. Slicer-Einstellungen anpassen</h4>
+                        <ul>
+                            <li>Platte wählen: Stelle im Bambu Studio das Druckbett auf Smooth PEI Plate oder High Temp
+                                Plate um.</li>
+                            <li>Muster für den ersten Layer: Nutze Hilbert-Kurve statt Standardlinien.</li>
+                            <li>Linienbreite erhöhen: Zum Beispiel 0,5 mm bei einer 0,4-mm-Düse.</li>
+                        </ul>
+
+                        <h4>2. Druckbett-Temperatur</h4>
+                        <ul>
+                            <li>Verwende für Standard-PLA eine Betttemperatur von 60 °C bis 65 °C.</li>
+                        </ul>
+
+                        <h4>3. Pflege und Reinigung</h4>
+                        <ul>
+                            <li>Vor jedem Druck gründlich mit Isopropanol reinigen oder gelegentlich mit warmem Wasser
+                                und Spülmittel abspülen.</li>
+                            <li>Keine Klebestifte oder Trennsprays verwenden.</li>
+                        </ul>
+
+                        <h4>4. Drucke richtig entfernen</h4>
+                        <ul>
+                            <li>Modell erst entfernen, wenn die Druckplatte vollständig abgekühlt ist.</li>
+                            <li>Magnetische Stahlplatte leicht biegen statt mit einem Spachtel kratzen.</li>
+                        </ul>
+
+                        <h4>5. Drucker-Einstellungen</h4>
+                        <ul>
+                            <li>Bei Effektplatten ohne RFID im P1S-Menü die Erkennung der Bauplattenposition
+                                deaktivieren.</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="karte">
+
+                    <h3>Einfache Modifikatoren</h3>
+
+                    <p>
+                        Mehr Kontrolle über Stabilität und Design.
+                    </p>
+
+                    <button onclick="zeigeModifikatoren()">
+                        Mehr anzeigen
+                    </button>
+
+                    <div id="modifikator-info" class="projekt-info">
+
+                        <p>
+                            Mit Modifikatoren kannst du bestimmte Bereiche
+                            eines Modells individuell anpassen.
+                        </p>
+
+                        <ul>
+                            <li>Mehr Infill in wichtigen Bereichen</li>
+                            <li>Texte oder Logos hinzufügen</li>
+                            <li>Einzelne Bereiche stabiler machen</li>
+                            <li>Druckzeit gezielt optimieren</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer mit Zusatzinformationen (Unterer bereich)-->
 <footer>
-    <p>© 2026 Meine 3D Welt</p>
+    <div class="footer-inhalt">
+
+        <img src="Bilder/Logo.png" class="footer-logo" alt="Logo der Webseite Meine 3D Welt">
+
+        <div class="footer-text">
+            <p>© 2026 Duarte Costa – Meine 3D Welt</p>
+            <p>Letzte Aktualisierung: Juni 2026</p>
+            <p>Diese Webseite ist ein privates Schulprojekt und dient nur zu Lern- und Präsentationszwecken.</p>
+        </div>
+
+        <img src="Bilder/P1S-A1.png" class="footer-drucker" alt="Bambu Lab P1S und Bambu Lab A1 3D-Drucker">
+
+    </div>
 </footer>
 
+    <!-- Fester Nach-oben-Button -->
+    <a href="#top" class="nach-oben-button-fix">
+        ↑
+    </a>
+    <!-- Verknüpfung mit JavaScript-Datei -->
+    <script src="script.js"></script>
+
+<div id="bildPopup" class="popup" onclick="popupSchliessen()">
+    <img id="popupBild" src="" alt="Großansicht">
+</div>
+
 </body>
+
 </html>
-Beispiel für deine styles.css
